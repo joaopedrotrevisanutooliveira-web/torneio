@@ -1,0 +1,163 @@
+body{
+    background: rgb(51, 32, 32) url(./imagem/39349079-de-madeira-paineis-textura-fundo-foto.jpg);
+    font-family: 'Poppins', sans-serif;
+}
+
+.titulo-torneio {
+    text-align: center;
+    font-size: 40px;
+    color: #142f00;
+    font-weight: bold;
+    margin-top: 20px;
+    text-shadow: 
+        0 0 10px #00ff99,
+        0 0 10px #00ff99,
+        0 0 20px #00ff99;   
+    letter-spacing: 2px;
+}
+
+.titulo-premio {
+    text-align: center;
+    font-size: 60px;
+    color: #ffd700;
+    font-weight: bold;
+    margin-top: 5px;
+    text-shadow:
+        0 0 10px #ffd700,
+        0 0 20px #ffea8a,
+        0 0 40px #ffe28a;
+    letter-spacing: 3px;
+    animation: brilhoPremio 3s infinite ease-in-out;
+}
+
+@keyframes brilhoPremio {
+    0% { opacity: 0.9; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.05); }
+    100% { opacity: 0.9; transform: scale(1); }
+}
+
+
+.mesa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 800px;
+    width: 50vw;
+    min-height: 600px;
+    height: auto;
+    background: green url('./imagem/fundo-verde-padrao-de-meio-tom_1409-1739.avif'); /* textura verde */
+    animation: feltro 10s linear infinite;
+    border-radius: 20px;
+    margin: 20px auto;
+    gap: 10px;
+    box-shadow:
+    0 0 20px rgba(0,255,0,0.4),
+    inset 0 0 15px rgba(0,255,0,0.4);
+    animation: glowMesa 4s infinite alternate;
+}
+
+@keyframes glowMesa {
+    0% { box-shadow: 0 0 15px rgba(0,255,0,0.3), inset 0 0 10px rgba(0,255,0,0.2); }
+    50% { box-shadow: 0 0 25px rgba(0,255,0,0.6), inset 0 0 20px rgba(0,255,0,0.5); }
+    100% { box-shadow: 0 0 15px rgba(0,255,0,0.3), inset 0 0 10px rgba(0,255,0,0.2); }
+}
+
+.chaveround{
+    display: flex;
+    justify-content:flex-start ;
+    align-items:center;
+    flex-direction: row;
+    border-radius: 20px;
+    gap: 100px;
+}
+
+.round{
+    display: flex;
+    justify-content:flex-start ;
+    flex-direction: column;
+    border-radius: 20px;
+    margin: 20px auto;
+    gap: 4px;
+}
+
+.partida {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 16px;
+    border: 3px solid rgb(255, 255, 255);
+    gap: 2px;
+    border-radius: 20px;
+}
+
+
+.jogador {
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    background: #222;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    border: 3px solid #fff;
+}
+
+.normal {
+    border: solid 2px white;
+    color: white;
+}
+
+.winner {
+    border: solid 2px blue;
+    color: blue;
+}
+
+.loser {
+    border: solid 2px red;
+    color: red;
+}
+
+.bigwinner {
+    border: solid 2px gold;
+    color: gold;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    .titulo-torneio {
+        font-size: 28px;
+        margin-top: 10px;
+    }
+
+    .titulo-premio {
+        font-size: 38px;
+    }
+
+    .mesa {
+        width: 90vw;
+        min-width: unset;
+        padding: 10px;
+        overflow-x: auto; /* importante */
+        display: block;
+    }
+
+    .chaveround {
+        flex-direction: row;
+        gap: 40px;
+        width: max-content; /* permite scroll horizontal */
+    }
+
+    .jogador {
+        width: 60px;
+        height: 60px;
+        font-size: 10px;
+    }
+
+    .partida {
+        padding: 6px 10px;
+    }
+}
+
+
